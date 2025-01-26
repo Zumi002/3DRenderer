@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GK-3DRendering", "GK-3DRendering\GK-3DRendering.csproj", "{DF02269A-727E-4550-82E0-92A29020732B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF02269A-727E-4550-82E0-92A29020732B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF02269A-727E-4550-82E0-92A29020732B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF02269A-727E-4550-82E0-92A29020732B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF02269A-727E-4550-82E0-92A29020732B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5C81A6B-F86E-4A46-BCED-D6EEA65BDCD3}
+	EndGlobalSection
+EndGlobal
