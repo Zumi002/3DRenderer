@@ -60,11 +60,14 @@ namespace GK_3DRendering
 
             IntPtr context = ImGui.CreateContext();
             ImGui.SetCurrentContext(context);
-            if (defaultIni != null)
+            if (defaultIni != null && !File.Exists(ImGui.GetIO().IniFilename))
             {
                 ImGui.LoadIniSettingsFromMemory(defaultIni);
             }
-            ImGui.LoadIniSettingsFromDisk(ImGui.GetIO().IniFilename);
+            else
+            {
+                ImGui.LoadIniSettingsFromDisk(ImGui.GetIO().IniFilename);
+            }
             var io = ImGui.GetIO();
             io.Fonts.AddFontDefault();
 

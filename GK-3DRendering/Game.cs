@@ -36,7 +36,7 @@ namespace GK_3DRendering
         {
             base.OnLoad();
             VSync = VSyncMode.On;
-            _controller = new ImGuiController(ClientSize.X, ClientSize.Y);
+            _controller = new ImGuiController(ClientSize.X, ClientSize.Y, defaultIni);
             _inImGuiWindowRenderer = new InImGuiWindowRenderer(this);
             _ImGuiHierarchy = new ImGuiHierarchy();
             _ImGuiInspector = new ImGuiInspector();
