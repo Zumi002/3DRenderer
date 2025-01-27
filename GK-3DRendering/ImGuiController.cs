@@ -44,7 +44,7 @@ namespace GK_3DRendering
         /// <summary>
         /// Constructs a new ImGuiController.
         /// </summary>
-        public ImGuiController(int width, int height)
+        public ImGuiController(int width, int height, string? defaultIni = null)
         {
             _windowWidth = width;
             _windowHeight = height;
@@ -60,6 +60,11 @@ namespace GK_3DRendering
 
             IntPtr context = ImGui.CreateContext();
             ImGui.SetCurrentContext(context);
+            if (defaultIni != null)
+            {
+                ImGui.LoadIniSettingsFromMemory(defaultIni);
+            }
+            ImGui.LoadIniSettingsFromDisk(ImGui.GetIO().IniFilename);
             var io = ImGui.GetIO();
             io.Fonts.AddFontDefault();
 
