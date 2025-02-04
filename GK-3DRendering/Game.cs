@@ -62,7 +62,7 @@ namespace GK_3DRendering
             cam.Controller = new FPPController(cam.Transform);
             cam.Transform.SetPosition(new Vector3(0, 0, 10f));
 
-            ProjectionCamera camFollower = new ProjectionCamera(Scene, (float)ClientSize.X / ClientSize.Y, MathF.PI / 2, 0.1f, 200f, new Transform());
+            ProjectionCamera camFollower = new ProjectionCamera(Scene, (float)ClientSize.X / ClientSize.Y, MathF.PI / 2, 0.1f, 200f, new Transform(new Vector3(0, 16, 10)));
             camFollower.Name = "Follower Camera";
 
             ProjectionCamera noMoveCamera = new ProjectionCamera(Scene, (float)ClientSize.X / ClientSize.Y, MathF.PI / 2, 0.1f, 200f, new Transform(new Vector3(0,16,25), new Vector3(MathHelper.DegreesToRadians(-30),0,0)));
@@ -77,10 +77,12 @@ namespace GK_3DRendering
             plane.Transform.SetScale(new Vector3(20f, 1f, 20f));
 
             LoadableObject sofa = new LoadableObject("GK_3DRendering.Resources.Models.sofa.obj", Scene);
+            sofa.Name = "Sofa";
             sofa.Transform.SetPosition(new Vector3(1f, -1f, 7f));
             sofa.Transform.SetScale(new Vector3(0.07f, 0.07f, 0.07f));
 
             LoadableObject toothless = new LoadableObject("GK_3DRendering.Resources.Models.toothless.obj", Scene);
+            toothless.Name = "Toothless";
             toothless.Transform.SetPosition(new Vector3(0f, 0f, 17f));
             toothless.Transform.SetScale(new Vector3(0.03f, 0.03f, 0.03f));
             toothless.Transform.Rotate(new Vector3(0, -MathF.PI / 2, 0));
@@ -94,10 +96,12 @@ namespace GK_3DRendering
 
             
             camFollower.Controller = new FollowerController(camFollower.Transform, toothless.Transform);
+            ((FollowerController)camFollower.Controller).speed = 0;
             
 
             LoadableObject sphere = new LoadableObject("GK_3DRendering.Resources.Models.sphere.obj", Scene);
             sphere.Transform.SetPosition(new Vector3(0, 1f, 2f));
+            sphere.Name = "Sphere";
 
             Cube flagPole = new Cube(Scene, "Flag pole",
                                      new Transform(new Vector3(-10, 5, -10), Vector3.Zero, new Vector3(1, 10, 1)),
@@ -123,18 +127,14 @@ namespace GK_3DRendering
             refl.SetParent(toothless);
             toothless.AddChild(refl2);
             
-            
+            ProjectionCamera onToothlessCamera = new ProjectionCamera(Scene, (float)ClientSize.X / ClientSize.Y, MathF.PI / 2, 0.1f, 200f, new Transform(new Vector3(0,100,-20)));
+            toothless.AddChild(onToothlessCamera);
 
         }
 
         protected override void OnRenderFrame(FrameEventArgs args)
         {
             base.OnRenderFrame(args);
-
-
-            //GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit | ClearBufferMask.StencilBufferBit);
-
-            //SceneRenderer.RenderScene(Scene);
 
             GL.Clear(ClearBufferMask.DepthBufferBit | ClearBufferMask.StencilBufferBit);
 
