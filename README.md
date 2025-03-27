@@ -68,7 +68,7 @@ Engine supports projection cameras with different behaviors:
 - **Follower Camera** - Follows object with adjustable speed  
 - **FPP Camera** - First-person controls:  
 **W/S** - forward/backward  
-** A/D** - left/right  
+**A/D** - left/right  
 **Space/LShift** - up/down  
 Hold **LMB** to rotate camera around  
 ##### FPP Camera
@@ -85,6 +85,7 @@ Hold **LMB** to rotate camera around
 <p align="center">
   <img src="Images/CameraFollowerWithSpeed.gif"/>
 </p>
+
 ##### Camera attached to object
 <p align="center">
   <img src="Images/CameraAttached.gif"/>
@@ -98,7 +99,7 @@ Fog that increases with distance, helping maintain realistic environment.
 
 ### Tessellation Shader  
 Specialized tessellation shader for rendering bicubic Bézier patches with wave animation.
- Tessellation level adjusts based on camera distance. Patches use the same material system. Waving animation supports adjustable animation speed. 
+ Tessellation level adjusts based on camera distance. Patches use the same material system as models. Waving animation supports adjustable animation speed. 
 ##### Example usage to make flag 
 <p align="center">
   <img src="Images/TesselationFlag.gif"/>
