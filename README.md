@@ -1,5 +1,5 @@
-# Renderer3D  
-Renderer3D is simple 3D rendering engine developed as part of Computer Graphics course at WUT. It's written in C# using OpenTK with OpenGL, and ImGUI.
+# 3DRenderer
+3DRenderer is simple 3D rendering engine developed as part of Computer Graphics course at WUT. It's written in C# using OpenTK with OpenGL, and ImGUI.
 
 ## Features  
 ### Model  system
