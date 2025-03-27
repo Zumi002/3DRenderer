@@ -4,7 +4,7 @@
 #define MAX_SPOT_LIGHTS 5
 #define MAX_POINT_LIGHTS 5
 
-#define FOG_DENSITY 0.01
+#define FOG_DENSITY 0.02
 #define FOG_COLOR vec3(0.7)
 
 struct Material 

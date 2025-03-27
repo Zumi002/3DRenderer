@@ -115,8 +115,8 @@ namespace GK_3DRendering
                                 break;
                         }
                     }
+                    return true;
                 }
-                return true;
             }
             return false;
         }
